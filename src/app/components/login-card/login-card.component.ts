@@ -13,19 +13,23 @@ import { LoginForm } from './interfaces';
 
 export class LoginCardComponent implements OnInit{
 
-  http = Inject(HttpClient)
+
   url = BASE_URL + 'api/login'
+  http = Inject(HttpClient)
+
+
   loginData :LoginForm = {
     email:'',
     password:''
   }
 
   loginIn(data: LoginForm){
-    console.log('chegou aq')
+    // console.log('chegou aq')
+    console.log(data.email)
     this.http.post(this.url,data)
-      .subscribe(response => {
-        console.log("data posted",response)
-      })
+      // .subscribe(response => {
+      //   console.log("data posted",response)
+      // })
   }
 
   ngOnInit(): void {
