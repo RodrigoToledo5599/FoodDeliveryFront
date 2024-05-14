@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { BASE_URL } from '../../../api/api';
 import { HttpClient } from '@angular/common/http';
-import { LoginForm } from './interfaces';
-
+import { LoginForm,Token } from './interfaces';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-login-card',
@@ -11,32 +11,30 @@ import { LoginForm } from './interfaces';
 })
 
 
-export class LoginCardComponent implements OnInit{
+export class LoginCardComponent{
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  )
+  {}
 
 
   url = BASE_URL + 'api/login'
-  http = Inject(HttpClient)
-
-
-  loginData :LoginForm = {
-    email:'',
-    password:''
-  }
-
-  loginIn(data: LoginForm){
-    // console.log('chegou aq')
-    console.log(data.email)
-    this.http.post(this.url,data)
-      // .subscribe(response => {
-      //   console.log("data posted",response)
-      // })
-  }
-
-  ngOnInit(): void {
-    console.log(this.url)
+  loginform: LoginForm ={
+    email: "",
+    password: ""
   }
 
 
-
-
+  loginIn (data:LoginForm){
+    this.http
+      .post<Token>(this.url,data)
+      .subscribe((response:Token) => {
+        console.log(response.token);
+        this.router.navigate(['/home']);
+      },
+      (error) => {
+        console.error('Não deu pra logar');
+      });
+  }
 }
