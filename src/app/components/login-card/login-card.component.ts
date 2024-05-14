@@ -22,20 +22,16 @@ export class LoginCardComponent{
     password: ""
   }
 
-  LoadHomePage(){
-    console.log('se chegou aq tu é gay')
-    return this.router.navigate(['/home'])
-  }
-
   loginIn (data:LoginForm){
-    this.http.post<Token>(this.url,data)
+    this.http
+      .post<Token>(this.url,data)
       .subscribe((response:Token ) => {
         console.log(response.token);
+        this.router.navigate(['/home'])
+      },
+      (error) =>{
+        console.error('Login error: ',error);
       });
-    this.LoadHomePage()
   }
-
-
-
 
 }
