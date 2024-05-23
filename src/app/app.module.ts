@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginCardComponent } from './components/login-card/login-card.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ServingItemComponent } from './components/serving-item/serving-item.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { HomeComponent } from './pages/home/home.component';
     AppComponent,
     LoginCardComponent,
     HomeComponent,
+    ServingItemComponent,
   ],
   imports: [
     BrowserModule,
