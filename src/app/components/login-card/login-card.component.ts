@@ -27,7 +27,7 @@ export class LoginCardComponent{
       .post<Token>(this.url,data)
       .subscribe((response:Token ) => {
         console.log(response.token);
-        this.router.navigate(['/home'])
+        this.router.navigate([''])
       },
       (error) =>{
         console.error('Login error: ',error);

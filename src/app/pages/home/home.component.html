@@ -1,1 +1,9 @@
-<p>home works!</p>
+
+<h2>info from API:</h2>
+<ul>
+    <li *ngFor="let item of servingsList">
+    {{ item.id}} - {{ item.Name }}
+    </li>
+</ul>
+
+  <!-- <div *ngIf="servingsList.length === 0">Loading...</div> -->
