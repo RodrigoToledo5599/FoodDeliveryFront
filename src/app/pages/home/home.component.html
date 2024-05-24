@@ -2,19 +2,19 @@
 
 
 <body>
+  <app-header-bar></app-header-bar>
   <div class="all-content">
-    <div *ngFor="let item of servingsList">
-      <div class="serving-item">
+    <a *ngFor="let item of servingsList">
+      <div class="serving-item" href="#">
         <div class="serving-image"></div>
         <div class="serving-data">
           <div class="title-price">
-            {{item.Name}}  R$: {{item.Price}} 
-          </div>
-          <div class="description">
-            {{item.Description}}
+            <h4>
+              {{item.Name}} <br> R$: {{item.Price}}
+            </h4>
           </div>
         </div>
       </div>
-    </div>
+    </a>
   </div>
 </body>

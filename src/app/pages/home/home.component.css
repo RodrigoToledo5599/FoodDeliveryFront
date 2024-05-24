@@ -17,10 +17,18 @@ body{
     align-items: center;
     justify-content: center;
     height:10rem;
-    border: solid 2px black;
+    border: solid 3px black;
     border-radius: 8px;
     margin-bottom: 2rem;
+    text-decoration: none;
+    color:inherit;
 }
+
+.all-content .serving-item :hover{
+    cursor: pointer;
+
+}
+
 
 .all-content .serving-item .serving-image{
     width:8rem;
@@ -37,14 +45,9 @@ body{
     justify-content:start;
     height:8rem;
     width:1080px;
-}
+  }
 
 .all-content .serving-item .serving-data .title-price{
     padding:0.4rem;
     /* border: solid 2px black; */
-}
-
-.all-content .serving-item .serving-data .description{
-    padding:0.4rem;
-    /* border:solid 2px red; */
 }

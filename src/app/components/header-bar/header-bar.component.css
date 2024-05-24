@@ -1,0 +1,42 @@
+nav .header-full-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border:solid 2px black;
+  width:95vw;
+  max-width: 1920px;
+  margin-bottom: 5rem;
+}
+
+nav .header-full-content .logo-zone{
+  width:8rem;
+  height:5rem;
+  border:solid 2px black;
+
+}
+
+
+nav .header-full-content .options{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border:solid 1px black;
+  width:40vw;
+}
+
+nav .header-full-content .options .header-options{
+  margin-right: 4rem;
+}
+
+
+
+
+
+
+
+
+nav .header-full-content .empty-space-for-now{
+  width:5vw;
+}

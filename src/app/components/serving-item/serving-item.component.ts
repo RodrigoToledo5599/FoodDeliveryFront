@@ -6,7 +6,7 @@ import { Serving } from './interfaces';
   styleUrl: './serving-item.component.css'
 })
 export class ServingItemComponent {
-  
-  @Input() inputProperty:Serving;
+
+  // @Input() inputProperty:Serving;
 
 }

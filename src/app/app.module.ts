@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { LoginCardComponent } from './components/login-card/login-card.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ServingItemComponent } from './components/serving-item/serving-item.component';
+import { HeaderBarComponent } from './components/header-bar/header-bar.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { ServingItemComponent } from './components/serving-item/serving-item.com
     LoginCardComponent,
     HomeComponent,
     ServingItemComponent,
+    HeaderBarComponent,
   ],
   imports: [
     BrowserModule,
