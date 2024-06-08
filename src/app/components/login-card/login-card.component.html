@@ -1,7 +1,9 @@
 <form (ngSubmit)="loginIn(loginform)">
-  <input type="text" placeholder="email" [(ngModel)]="loginform.email" name="email" ><br>
-  <input type="password" placeholder="password" [(ngModel)]="loginform.password" name="password" ><br>
-  <button type="submit">enviar</button>
+  <div class="form-content">
+    <input type="text" placeholder="email" [(ngModel)]="loginform.email" name="email" >
+    <input type="password" placeholder="password" [(ngModel)]="loginform.password" name="password" >
+    <button type="submit">enviar</button>
+  </div>
 </form>
 
 

@@ -1,3 +1,29 @@
-form{
-  background-color: aqua;
+form {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100vw;
+  height:100vh;
+  background-color: rgb(0, 225, 255);
+}
+
+form .form-content{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  align-items: center;
+  width:40vw;
+  height:14vh;
+  /* border:solid 2px black; */
+}
+
+form .form-content input{
+  width:15vw;
+  height:3vh;
+}
+
+form .form-content button{
+  width:4vw;
+  height:3vh;
 }

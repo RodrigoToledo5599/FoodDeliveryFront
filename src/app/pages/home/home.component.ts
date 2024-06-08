@@ -1,7 +1,8 @@
 import { Component , OnInit } from '@angular/core';
 import { BASE_URL } from '../../../api/api';
-import { HttpClient } from '@angular/common/http';
-import { Serving,Token } from './interfaces';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Serving } from './interfaces';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Component({
@@ -13,7 +14,8 @@ import { Serving,Token } from './interfaces';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private http : HttpClient
+    private http: HttpClient,
+    private cookie: CookieService,
   ){}
 
   url = BASE_URL + 'api/home';
@@ -24,15 +26,17 @@ export class HomeComponent implements OnInit {
     Description:""
   }
   servingsList: Serving[] = [];
+  token:string  = this.cookie.get('access_token');
 
-  token: Token ={
-    token:""
-  }
+  header = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + this.token
+  });
 
   ngOnInit(){
-    this.http.get<Serving[]>(this.url)
+    console.log(this.token);
+    this.http.get<Serving[]>(this.url , {headers: this.header})
       .subscribe(servingsList => this.servingsList = servingsList)
-      console.log(this.servingsList)
   }
 
 

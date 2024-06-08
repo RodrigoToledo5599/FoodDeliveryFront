@@ -3,15 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AppComponent } from './app.component';
 import { ServingItemComponent } from './components/serving-item/serving-item.component';
-
+import { LoginCardComponent } from './components/login-card/login-card.component';
 
 
 
 const routes: Routes = [
 
   // { path: '' , component: AppComponent},
-  { path: '', component: HomeComponent },
-  { path: '/serving/:servingId', component: ServingItemComponent },
+  { path: '', component: LoginCardComponent },
+  { path: 'serving/:servingId', component: ServingItemComponent },
+  { path: 'home', component: HomeComponent },
 
 
 
