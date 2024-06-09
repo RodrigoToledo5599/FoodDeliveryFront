@@ -1,4 +1,3 @@
-
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BASE_URL } from '../../../api/api';
 import { Serving } from './interfaces';
@@ -6,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root' // Optional: specify provider scope (default is 'root')
+  providedIn: 'root'
 })
 
 export class HomeService {
@@ -16,13 +15,6 @@ export class HomeService {
     private http: HttpClient
   ){}
 
-  // serving: Serving ={
-  //   id:"",
-  //   Name: "",
-  //   Price: "",
-  //   Description:""
-  // }
-
   loadHomePage(token:string):Observable<Serving[]> {
     var header = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -30,8 +22,6 @@ export class HomeService {
     });
     return this.http.get<Serving[]>(this.urlhome , {headers: header})
   }
-
-
 
 }
 

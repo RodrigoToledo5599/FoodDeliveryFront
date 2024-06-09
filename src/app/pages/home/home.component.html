@@ -1,7 +1,6 @@
-
   <app-header-bar></app-header-bar>
-  <div class="all-content">
-    <a *ngFor="let item of servingsList">
+  <div class="all-content container">
+    <a *ngFor="let item of servingsList" routerLink="/serving/{{ item.id }}" class="btn">
       <div class="serving-item" href="#">
         <div class="serving-image"></div>
         <div class="serving-data">
@@ -9,7 +8,6 @@
             <h4>
               {{item.Name}} <br> R$: {{item.Price}}
             </h4>
-            <!-- <button (click)="()" class="btn btn-primary">Selecionar</button> -->
           </div>
         </div>
       </div>

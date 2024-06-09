@@ -5,7 +5,7 @@ form {
   align-items: center;
   width:100vw;
   height:100vh;
-  background-color: rgb(0, 225, 255);
+  background-color: rgb(190, 217, 221);
 }
 
 form .form-content{
@@ -18,12 +18,6 @@ form .form-content{
   /* border:solid 2px black; */
 }
 
-form .form-content input{
-  width:15vw;
-  height:3vh;
-}
 
-form .form-content button{
-  width:4vw;
-  height:3vh;
-}
+
+

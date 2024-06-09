@@ -10,6 +10,15 @@ body{
     align-items: center;
     justify-content: center;
 }
+.all-content a{
+  color:inherit;
+  text-decoration: none;
+}
+
+.all-content a:hover{
+  color: blue;
+  text-decoration: underline;
+}
 
 .all-content .serving-item{
     display:flex;
