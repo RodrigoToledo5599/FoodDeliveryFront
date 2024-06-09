@@ -1,8 +1,8 @@
+import { HomeService } from './home.services';
 import { Component , OnInit } from '@angular/core';
-import { BASE_URL } from '../../../api/api';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Serving } from './interfaces';
 import { CookieService } from 'ngx-cookie-service';
+import { Serving } from './interfaces';
+
 
 
 @Component({
@@ -12,31 +12,20 @@ import { CookieService } from 'ngx-cookie-service';
 })
 
 export class HomeComponent implements OnInit {
-
+  servingsList: Serving[] = [];
   constructor(
-    private http: HttpClient,
     private cookie: CookieService,
+    private homeService: HomeService,
   ){}
 
-  url = BASE_URL + 'api/home';
-  serving: Serving ={
-    id:"",
-    Name: "",
-    Price: "",
-    Description:""
-  }
-  servingsList: Serving[] = [];
-  token:string  = this.cookie.get('access_token');
-
-  header = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer ' + this.token
-  });
-
   ngOnInit(){
-    console.log(this.token);
-    this.http.get<Serving[]>(this.url , {headers: this.header})
-      .subscribe(servingsList => this.servingsList = servingsList)
+
+    this.homeService.loadHomePage(this.cookie.get('access_token'))
+      .subscribe(
+        (servings:Serving[]) => this.servingsList = servings
+      );
+
+
   }
 
 

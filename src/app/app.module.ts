@@ -11,7 +11,7 @@ import { LoginCardComponent } from './components/login-card/login-card.component
 import { HomeComponent } from './pages/home/home.component';
 import { ServingItemComponent } from './components/serving-item/serving-item.component';
 import { HeaderBarComponent } from './components/header-bar/header-bar.component';
-
+import { HomeService } from './pages/home/home.services';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { HeaderBarComponent } from './components/header-bar/header-bar.component
     HomeComponent,
     ServingItemComponent,
     HeaderBarComponent,
-  ],
+
+    ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -29,7 +30,10 @@ import { HeaderBarComponent } from './components/header-bar/header-bar.component
     HttpClientModule,
     RouterModule
   ],
-  providers: [CookieService],
+  providers: [
+    CookieService,
+    HomeService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
