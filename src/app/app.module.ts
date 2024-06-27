@@ -13,7 +13,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ServingItemComponent } from './pages/serving-item/serving-item.component';
 import { HeaderBarComponent } from './components/header-bar/header-bar.component';
 import { HomeService } from './pages/home/home.services';
-import { NotAuthenticatedComponent } from './pages/not-authenticated/not-authenticated.component';
+import { UserNotFoundComponent } from './error-pages/user-not-found/user-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +21,7 @@ import { NotAuthenticatedComponent } from './pages/not-authenticated/not-authent
     HomeComponent,
     ServingItemComponent,
     HeaderBarComponent,
-    NotAuthenticatedComponent,
+    UserNotFoundComponent,
 
     ],
   imports: [
