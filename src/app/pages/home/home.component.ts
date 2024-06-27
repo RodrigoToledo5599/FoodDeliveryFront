@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   ){}
 
   ngOnInit(){
+    
     this.homeService.loadHomePage(this.cookie.get('access_token'))
       .subscribe(
         (servings:Serving[]) => this.servingsList = servings

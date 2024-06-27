@@ -13,6 +13,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ServingItemComponent } from './pages/serving-item/serving-item.component';
 import { HeaderBarComponent } from './components/header-bar/header-bar.component';
 import { HomeService } from './pages/home/home.services';
+import { NotAuthenticatedComponent } from './pages/not-authenticated/not-authenticated.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { HomeService } from './pages/home/home.services';
     HomeComponent,
     ServingItemComponent,
     HeaderBarComponent,
+    NotAuthenticatedComponent,
 
     ],
   imports: [
@@ -29,7 +31,7 @@ import { HomeService } from './pages/home/home.services';
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [
     CookieService,
