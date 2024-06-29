@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 import { RouterModule } from '@angular/router'
 import { AppRoutingModule } from './app-routing.module';
@@ -31,7 +31,7 @@ import { UserNotFoundComponent } from './error-pages/user-not-found/user-not-fou
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
-    NgbModule,
+
   ],
   providers: [
     CookieService,

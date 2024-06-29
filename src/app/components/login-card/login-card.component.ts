@@ -32,9 +32,12 @@ export class LoginCardComponent{
     this.http
       .post<Token>(this.url,data)
       .subscribe((response:Token ) => {
+        if(response.token == "usuario nao encontrado"){
+          return this.router.navigate(['/user_not_found']);
+        }
         this.access_token.token = response.token;
         this.cookie.set('access_token', response.token);
-        this.router.navigate(['/home']);
+        return this.router.navigate(['/home']);
         },
         (error) =>{
           console.error('Login error: ',error);
