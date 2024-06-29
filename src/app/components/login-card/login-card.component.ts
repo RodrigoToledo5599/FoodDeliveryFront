@@ -32,7 +32,8 @@ export class LoginCardComponent{
     this.http
       .post<Token>(this.url,data)
       .subscribe((response:Token ) => {
-        if(response.token == "usuario nao encontrado"){
+        if(response.token == "usuario nao encontrado" || response.token == null || response.token == ""){
+          this.cookie.set('access_token', "");
           return this.router.navigate(['/user_not_found']);
         }
         this.access_token.token = response.token;
