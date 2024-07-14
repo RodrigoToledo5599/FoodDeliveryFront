@@ -1,2 +1,19 @@
+
+
 <app-header-bar></app-header-bar>
-{{servingId}}
+
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-md-6 border border-primary">
+      <img src="your_image.jpg" alt="Image description" class="img-fluid">
+    </div>
+    <div class="col-md-6">
+      
+      <h2>{{serving?.Name}}</h2>
+      <h2>R$: {{serving?.Price}}</h2>
+      <p>{{serving?.Description}}</p>
+    </div>
+  </div>
+  <button>adicionar ao carrinho</button>
+</div>
+

@@ -1,7 +1,8 @@
   <app-header-bar></app-header-bar>
   <div class="all-content container">
     <!-- {{this.cookie.get("access_token")}} -->
-    <a *ngFor="let item of servingsList" routerLink="/serving/{{ item.id }}" class="btn">
+    <!-- <a *ngFor="let item of servingsList" routerLink="/serving/{{ item.id }}" class="btn"> -->
+    <a *ngFor="let item of servingsList" routerLink="/serving/{{item.id}}" class="btn">
       <div class="serving-item" href="#">
         <div class="serving-image"></div>
         <div class="serving-data">

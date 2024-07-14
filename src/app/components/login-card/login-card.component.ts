@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { LoginForm,Token } from './interfaces';
 import { Router } from '@angular/router'
 import { CookieService } from 'ngx-cookie-service';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 
 @Component({
   selector: 'app-login-card',
@@ -11,14 +13,13 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrl: './login-card.component.css',
 })
 
-
 export class LoginCardComponent{
   constructor(
     private http: HttpClient,
-    private router:Router,
-    private cookie:CookieService
+    private router: Router,
+    private cookie: CookieService,
+    private spinner: NgxSpinnerService
   ){}
-
   url = BASE_URL + 'api/login'
   loginform: LoginForm ={
     email: "",
@@ -28,7 +29,12 @@ export class LoginCardComponent{
     token:""
   }
 
+  LoadSpinner(){
+    this.spinner.show();
+  }
+
   loginIn (data:LoginForm){
+    this.LoadSpinner();
     this.http
       .post<Token>(this.url,data)
       .subscribe((response:Token ) => {
@@ -45,5 +51,4 @@ export class LoginCardComponent{
         }
       );
   }
-
 }

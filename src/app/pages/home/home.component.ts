@@ -3,6 +3,7 @@ import { Component , OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Serving } from './interfaces';
 import { Router } from '@angular/router'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { Router } from '@angular/router'
 export class HomeComponent implements OnInit {
   servingsList: Serving[] = [];
   constructor(
-    public cookie: CookieService,
+    private cookie: CookieService,
     private homeService: HomeService,
     private router:Router
   ){}
