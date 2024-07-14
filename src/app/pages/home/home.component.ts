@@ -1,7 +1,7 @@
 import { HomeService } from './home.services';
 import { Component , OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { Serving } from './interfaces';
+import { Prato } from './interfaces';
 import { Router } from '@angular/router'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -13,7 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 })
 
 export class HomeComponent implements OnInit {
-  servingsList: Serving[] = [];
+  pratosList: Prato[] = [];
   constructor(
     private cookie: CookieService,
     private homeService: HomeService,
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     }
     return this.homeService.loadHomePage(this.cookie.get('access_token'))
       .subscribe(
-        (servings:Serving[]) => this.servingsList = servings
+        (Pratos:Prato[]) => this.pratosList = Pratos
       );
   }
 }
