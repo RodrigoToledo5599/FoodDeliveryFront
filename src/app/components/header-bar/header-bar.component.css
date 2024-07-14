@@ -1,14 +1,14 @@
-#navzao{
+/* #navzao{
   max-width: 1920px;
-}
+} */
 
-nav .logo-zone{
+nav .container .logo-zone{
   width:8rem;
   height:5rem;
   border:solid 2px black;
 }
 
-nav .options{
+nav .container .options{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,6 +18,6 @@ nav .options{
 
 }
 
-nav .empty-space-for-now{
+nav .container  .empty-space-for-now{
 
 }

@@ -1,18 +1,18 @@
-  <app-header-bar></app-header-bar>
-  <div class="all-content container">
-    <!-- {{this.cookie.get("access_token")}} -->
-    <!-- <a *ngFor="let item of servingsList" routerLink="/serving/{{ item.id }}" class="btn"> -->
-    <a *ngFor="let item of servingsList" routerLink="/serving/{{item.id}}" class="btn">
-      <div class="serving-item" href="#">
-        <div class="serving-image"></div>
-        <div class="serving-data">
-          <div class="title-price">
-            <h4>
-              {{item.Name}} <br> R$: {{item.Price}}
-            </h4>
+<app-header-bar></app-header-bar>
+<div class="all-content container">
+  <div *ngFor="let item of servingsList" class="grid-list">
+    <div class="serving-item">
+      <a routerLink="/serving/{{item.id}}" class="btn">
+        <div class="serving-item-data" href="#">
+          <div class="serving-image"></div>
+          <div class="serving-data">
+            <div class="title-price">
+              <p>{{item.Name}} </p>
+              <p>R$: {{item.Price}}</p>
+            </div>
           </div>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   </div>
-
+</div>
