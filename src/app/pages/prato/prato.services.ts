@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BASE_URL } from '../../../api/api';
-import { Serving } from './interfaces';
+import { Prato } from './interfaces';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
@@ -9,18 +9,18 @@ import { Injectable } from '@angular/core';
     providedIn: 'root'
 })
 
-export class ServingServices{
-    private urlserving =  BASE_URL + 'api/serving/';
+export class PratoServices{
+    private urlprato =  BASE_URL + 'api/prato/';
     constructor(
         private http:HttpClient 
     ){}
 
-    LoadServingPage(token:string, servingId:string |null):Observable<Serving>{
+    LoadPratoPage(token:string, pratoId:string |null):Observable<Prato>{
         var header = new HttpHeaders({
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + token
         });
-        return this.http.get<Serving>(this.urlserving + servingId ,{headers:header})
+        return this.http.get<Prato>(this.urlprato + pratoId ,{headers:header})
     }
 
 

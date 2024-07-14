@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { PratoComponent } from './prato.component';
 
-import { ServingItemComponent } from './serving-item.component';
-
-describe('ServingItemComponent', () => {
-  let component: ServingItemComponent;
-  let fixture: ComponentFixture<ServingItemComponent>;
+describe('PratoComponent', () => {
+  let component: PratoComponent;
+  let fixture: ComponentFixture<PratoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ServingItemComponent]
+      declarations: [PratoComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ServingItemComponent);
+    fixture = TestBed.createComponent(PratoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

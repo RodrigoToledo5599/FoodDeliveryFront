@@ -1,42 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-import { ServingServices } from './serving.services';
+import { PratoServices } from './prato.services';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute } from '@angular/router';
-import { Serving } from './interfaces';
+import { Prato } from './interfaces';
 import { Router } from '@angular/router';
 
 
 
 @Component({
-  selector: 'app-serving-item',
-  templateUrl: './serving-item.component.html',
-  styleUrl: './serving-item.component.css'
+  selector: 'app-prato',
+  templateUrl: './prato.component.html',
+  styleUrl: './prato.component.css'
 })
-export class ServingItemComponent implements OnInit{
-  public serving:Serving | null = null;
-  public servingId:string | null = null;
+export class PratoComponent implements OnInit{
+  public prato:Prato | null = null;
+  public pratoId:string | null = null;
   
 
   constructor(
     // private routes:ActivatedRoute,
     private cookie:CookieService,
     private router:Router,
-    private servingServices:ServingServices,
+    private pratoServices:PratoServices,
     private activatedRoute: ActivatedRoute,
   ){
   }
 
   ngOnInit(){
     this.activatedRoute.paramMap.subscribe(params =>{
-      this.servingId = params.get('servingId');
+      this.pratoId = params.get('PratoId');
     })
 
     if(this.cookie.get('access_token') == "" || this.cookie.get('access_token') == null){
       return this.router.navigate(['/user_not_found']);
     }
-    return this.servingServices.LoadServingPage(this.cookie.get('access_token'),this.servingId)
+    return this.pratoServices.LoadPratoPage(this.cookie.get('access_token'),this.pratoId)
       .subscribe(
-        (serv:Serving) => this.serving = serv
+        (serv:Prato) => this.prato = serv
       );
   }
 }

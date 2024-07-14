@@ -1,4 +1,4 @@
-export interface Serving {
+export interface Prato {
   id:string,
   Name:string,
   Price:string,
