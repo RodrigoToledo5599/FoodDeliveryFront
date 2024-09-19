@@ -1,9 +1,10 @@
 import { HomeService } from './home.services';
 import { Component , OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { Prato } from './interfaces';
+import { Prato } from './../../interfaces/interfaces';
 import { Router } from '@angular/router'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -17,8 +18,13 @@ export class HomeComponent implements OnInit {
   constructor(
     private cookie: CookieService,
     private homeService: HomeService,
-    private router:Router
+    private router: Router,
+    private spinner: NgxSpinnerService
   ){}
+
+  LoadSpinner(){
+    this.spinner.show();
+  }
 
   ngOnInit(){
     if(this.cookie.get('access_token') == "" || this.cookie.get('access_token') == null){

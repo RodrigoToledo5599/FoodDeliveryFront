@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { ToastrModule } from 'ngx-toastr';
+import { LocalStorageService } from './local-storage.service';
+
 
 
 import { RouterModule } from '@angular/router'
@@ -17,6 +20,9 @@ import { UserNotFoundComponent } from './error-pages/user-not-found/user-not-fou
 import { PratoServices } from './pages/prato/prato.services';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { timeout } from 'rxjs';
+import { CreateAccountComponent } from './pages/create-account/create-account.component';
+import { ConfirmarPedidoComponent } from './pages/confirmar-pedido/confirmar-pedido.component';
 
 
 @NgModule({
@@ -27,6 +33,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     PratoComponent,
     HeaderBarComponent,
     UserNotFoundComponent,
+    CreateAccountComponent,
+    ConfirmarPedidoComponent,
 
     ],
   imports: [
@@ -37,13 +45,19 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     HttpClientModule,
     RouterModule,
     BrowserAnimationsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true
+    }),
   
   ],
   providers: [
     CookieService,
     HomeService,
     PratoServices,
+    LocalStorageService,
     
   ],
   bootstrap: [AppComponent]

@@ -34,7 +34,6 @@ export class LoginCardComponent{
   }
 
   loginIn (data:LoginForm){
-    this.LoadSpinner();
     this.http
       .post<Token>(this.url,data)
       .subscribe((response:Token ) => {

@@ -1,11 +1,11 @@
 export interface Prato {
   id:string,
-  Name:string,
-  Price:string,
-  Description:string
+  name:string,
+  price:string,
+  description:string
 }
-  
+    
 export interface Token {
   token:string
 }
-  
+    

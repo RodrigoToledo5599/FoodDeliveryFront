@@ -1,8 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BASE_URL } from '../../../api/api';
-import { Prato } from './interfaces';
+import { Prato } from './../../interfaces/interfaces';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { LocalStorageService } from './../../local-storage.service';
 
 
 @Injectable({
@@ -12,7 +13,8 @@ import { Injectable } from '@angular/core';
 export class PratoServices{
     private urlprato =  BASE_URL + 'api/prato/';
     constructor(
-        private http:HttpClient 
+        private http:HttpClient,
+        private localStorage: LocalStorageService,
     ){}
 
     LoadPratoPage(token:string, pratoId:string |null):Observable<Prato>{
@@ -23,6 +25,7 @@ export class PratoServices{
         return this.http.get<Prato>(this.urlprato + pratoId ,{headers:header})
     }
 
+    
 
 }
 

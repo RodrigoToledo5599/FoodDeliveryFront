@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BASE_URL } from '../../../api/api';
-import { Prato } from './interfaces';
+import { Prato } from './../../interfaces/interfaces';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
