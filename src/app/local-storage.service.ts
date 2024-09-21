@@ -18,26 +18,36 @@ export class LocalStorageService {
     console.log("chegou aq");
   }
 
-  // testando
-  // Testing(): Prato[]{
   Testing(){
+    this.removeAll();
     let lista: Prato[] = [
-      {id: "1", name: "Pizza", price: "6666", description: "jiaowdjioawjiojawd"},
-      {id: "2", name: "x burguer", price: "55", description: "aiojawd"},
-      {id: "3", name: "wjiaiwjiwij", price: "66", description: "23423ki32r2i2"},
-      {id: "4", name: "oakwkod", price: "6", description: "44444444444wdjioawjiojawd"},
+      {id: "0", name: "Pizza", price: "6666", description: "jiaowdjioawjiojawd"},
+      {id: "1", name: "xburguer", price: "55", description: "aiojawd"},
+      {id: "2", name: "wjiaiwjiwij", price: "66", description: "23423ki32r2i2"},
+      {id: "3", name: "oakwkod", price: "6", description: "44444444444wdjioawjiojawd"},
+      {id: "4", name: "3m131213", price: "6", description: "44444444444wdjioawjiojawd"},
+      {id: "5", name: "1ok2123o13", price: "6", description: "44444444444wdjioawjiojawd"},
+      {id: "6", name: "kodsfop2323", price: "6", description: "44444444444wdjioawjiojawd"},
+      {id: "7", name: "21okdfsoposdfpp", price: "6", description: "44444444444wdjioawjiojawd"},
+      
+      
     ];
-    this.AdicionarASacola(lista[1]);
-    // this.AdicionarASacola(lista[2]);
+    lista.forEach(element => {
+      this.AdicionarASacola(element);
+    });
+    
 
     var result = this.getPedido();
-    // var result = lista;
     return result;
   }
 
   getPedido(): Prato[] {
     const storedItems = localStorage.getItem(this.pedidokey);
-    return JSON.parse(storedItems!) ;
+    return JSON.parse(storedItems!);
+  }
+
+  removeAll() {
+    return localStorage.clear();
   }
 
 

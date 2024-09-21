@@ -13,13 +13,9 @@ export class ConfirmarPedidoComponent implements OnInit {
   teste : Prato[] = [];
   constructor(
     private LSS : LocalStorageService,
-  )
-  {
-    
-  }
+  ){}
   ngOnInit(){
     this.teste = this.LSS.Testing();
-    
   }
 
 }
