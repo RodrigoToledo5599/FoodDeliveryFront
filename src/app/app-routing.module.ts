@@ -7,6 +7,7 @@ import { LoginCardComponent } from './components/login-card/login-card.component
 import { CreateAccountComponent } from './pages/create-account/create-account.component'
 import { UserNotFoundComponent } from './error-pages/user-not-found/user-not-found.component';
 import { ConfirmarPedidoComponent } from './pages/confirmar-pedido/confirmar-pedido.component';
+import { StatusPedidoComponent } from './pages/status-pedido/status-pedido.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'create_account', component: CreateAccountComponent },
   { path: 'user_not_found', component: UserNotFoundComponent },
   { path: 'confirmar_pedido', component: ConfirmarPedidoComponent },
+  { path: 'status_pedido' , component: StatusPedidoComponent },
 
 
 

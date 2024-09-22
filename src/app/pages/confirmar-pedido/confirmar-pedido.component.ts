@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalStorageService } from '../../local-storage.service';
+import { LocalStorageService } from '../../services/local-storage.service';
 import { Prato } from './../../interfaces/interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-confirmar-pedido',
@@ -10,12 +11,26 @@ import { Prato } from './../../interfaces/interfaces';
 
 export class ConfirmarPedidoComponent implements OnInit {
   
-  teste : Prato[] = [];
+  pedido : Prato[] = [];
+  precoTotal : number = 0;
   constructor(
     private LSS : LocalStorageService,
+    private router : Router,
   ){}
   ngOnInit(){
-    this.teste = this.LSS.Testing();
+    this.pedido = this.LSS.getPedido();
+    for(let element of this.pedido){
+      this.precoTotal += Number(element.price);
+    }
+    let precoString = this.precoTotal.toFixed(2);
+    this.precoTotal =  Number(precoString);
+    this.LSS.StorePrecoPedido(precoString);
   }
+
+  ConcluirPedido(){
+    this.LSS.SetPedidoFeito(true);
+    return this.router.navigate(['/status_pedido']);
+  }
+
 
 }

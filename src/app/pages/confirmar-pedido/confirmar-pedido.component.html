@@ -1,8 +1,16 @@
-<h1>xaiojdjoiadjioadjoiaodjaoiwdjioaiodioawio</h1>
+<app-header-bar></app-header-bar>
 
 
-<ul *ngFor="let item of teste;">
-    <li>
-        {{ item.name }}
-    </li>
-</ul>
+<div class="container">
+    <ul *ngFor="let item of pedido;">
+        <li>
+            <div class="item">
+                {{ item.name }} - R$ {{item.price}}
+            </div>
+        </li>
+    </ul>
+    
+    <p>Total R$: {{ precoTotal }}</p>
+    <button class="btn btn-primary" (click)="ConcluirPedido()"> finalizar pedido </button>
+ 
+</div>

@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { ToastrModule } from 'ngx-toastr';
-import { LocalStorageService } from './local-storage.service';
+import { LocalStorageService } from './services/local-storage.service';
 
 
 
@@ -23,6 +23,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { timeout } from 'rxjs';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
 import { ConfirmarPedidoComponent } from './pages/confirmar-pedido/confirmar-pedido.component';
+import { StatusPedidoComponent } from './pages/status-pedido/status-pedido.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ConfirmarPedidoComponent } from './pages/confirmar-pedido/confirmar-ped
     UserNotFoundComponent,
     CreateAccountComponent,
     ConfirmarPedidoComponent,
+    StatusPedidoComponent,
 
     ],
   imports: [

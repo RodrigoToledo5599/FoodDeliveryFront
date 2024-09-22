@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Prato } from './../../interfaces/interfaces';
 import { Router } from '@angular/router';
 import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
-import { LocalStorageService } from './../../local-storage.service';
+import { LocalStorageService } from './../../services/local-storage.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 
@@ -27,7 +27,8 @@ export class PratoComponent implements OnInit{
     private pratoServices:PratoServices,
     private activatedRoute: ActivatedRoute,
     private toast: ToastrService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private LSS: LocalStorageService,
   ){}
 
 
@@ -39,9 +40,15 @@ export class PratoComponent implements OnInit{
     this.spinner.hide();
   }
   
-  public adicionadoASacola(id: string, name:string, price:string, description:string){
-    console.log(id,name,price,description);
-    // this.toast.success('adicionado a sacola');
+  public adicionadoASacola(Id: string, Name:string, Price:string, Description:string){
+    let pratoAdd: Prato = {
+      id: Id,
+      name: Name,
+      price: Price,
+      description: Description
+    };
+    this.LSS.AdicionarASacola(pratoAdd);
+    console.log
   }
 
   ngOnInit(){

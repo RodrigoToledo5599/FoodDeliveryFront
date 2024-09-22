@@ -3,7 +3,7 @@ import { BASE_URL } from '../../../api/api';
 import { Prato } from './../../interfaces/interfaces';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { LocalStorageService } from './../../local-storage.service';
+import { LocalStorageService } from './../../services/local-storage.service';
 
 
 @Injectable({

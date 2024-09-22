@@ -1,13 +1,29 @@
 import { Injectable } from '@angular/core';
-import { Prato } from './interfaces/interfaces';
+import { Prato } from './../interfaces/interfaces';
 @Injectable({
   providedIn: 'root'
 })
 export class LocalStorageService {
   
-  public pedidokey: string = "pedido";
+  private pedidokey: string = "pedido";
+  private precopedidokey: string = "precopedido";
+  private pedidofeitokey: string = "pedidofeito"; // true/false ou 1/0
+  
 
   constructor() { }
+
+  SetPedidoFeito(feito : boolean){ // Usar quando o pedido feito ou concluido
+    if(feito == true){
+      localStorage.setItem(this.pedidofeitokey, "1")
+    }
+    else if(feito == false){
+      localStorage.setItem(this.pedidofeitokey, "0")
+    }
+  }
+
+  CheckPedidoFeito() : boolean{
+    return localStorage.getItem(this.pedidofeitokey)  == "1" ? true : false;
+  }
 
   AdicionarASacola(item: Prato): void {
     let pratos: Prato[] = [];
@@ -15,8 +31,37 @@ export class LocalStorageService {
     console.log(pratos);
     pratos.push(item);
     localStorage.setItem(this.pedidokey, JSON.stringify(pratos));
-    console.log("chegou aq");
+    console.log("prato adicionado");
   }
+
+  getPedido(): Prato[] {
+    const storedItems = localStorage.getItem(this.pedidokey);
+    return JSON.parse(storedItems!);
+  }
+  
+  StorePrecoPedido(preco : string){
+    localStorage.setItem(this.precopedidokey,preco);
+  }
+
+  PedidoConfirmado(){
+    // ainda estou pensando
+  }
+
+  PedidoEntregue(){
+
+  }
+
+  PedidoCancelado(){
+
+  }
+
+  removeAll() {
+    return localStorage.clear();
+  }
+
+
+  
+
 
   Testing(){
     this.removeAll();
@@ -40,16 +85,5 @@ export class LocalStorageService {
     var result = this.getPedido();
     return result;
   }
-
-  getPedido(): Prato[] {
-    const storedItems = localStorage.getItem(this.pedidokey);
-    return JSON.parse(storedItems!);
-  }
-
-  removeAll() {
-    return localStorage.clear();
-  }
-
-
 
 }
